@@ -110,6 +110,7 @@ class AdminController extends Controller
         $data = stations::find($id);
         return view('admin.update_station', compact('data'));
     }
+
     public function editstation($id, Request $request)
     {
         $data = stations::find($id);
@@ -139,6 +140,37 @@ class AdminController extends Controller
         $data->delete();
         return redirect()->back();
     }
+
+    public function edit_user_data($id)
+    {
+        $data = user::find($id);
+        return view('admin.update_station', compact('data'));
+    }
+
+    public function update_user_data($id, Request $request)         //user edit
+    {
+        $data = user::find($id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = $request->password;
+        $data->save();
+        return redirect()->back();
+    }
+
+    // public function editstation($id, Request $request)
+    // {
+    //     $data = stations::find($id);
+    //     $data->gatve = $request->gatve;
+    //     $data->miestas = $request->miestas;
+    //     $image = $request->file;
+    //     if ($image) {
+    //         $imagename = time() . '.' . $image->getClientOriginalExtension();
+    //         $request->file->move('popularimages', $imagename);
+    //         $data->image = $imagename;
+    //     }
+    //     $data->save();
+    //     return redirect()->back();
+    // }
 
     // public function search()
     // {

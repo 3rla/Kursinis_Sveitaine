@@ -22,7 +22,7 @@
                                 <a href="#news">{{$news->TopLabelText}}</a>
                             </div>
                             <a href="#news" class="post-thumb">
-                                <img src="../assets/img/blog/blog_1.jpg" alt="">
+                                <img src="upload_newws/{{$news->image}}" alt="">
                             </a>
                         </div>
                         <div class="body">

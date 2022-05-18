@@ -73,8 +73,9 @@
             </div> <!-- .container -->
         </nav>
     </header>
-
-    <div class="page-hero bg-image" style="background-image: url(../assets/img/map2.PNG);">
+    
+    @include('user.gmaps')
+    
     </div>
         <div id="about" class="page-section pb-0">
             <div class="container">

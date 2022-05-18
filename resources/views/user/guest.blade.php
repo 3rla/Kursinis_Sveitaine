@@ -65,7 +65,8 @@
         </nav>
     </header>
 
-    <div class="page-hero bg-image" style="background-image: url(../assets/img/map2.PNG);">
+    @include('user.gmaps')
+
     </div>
         <div id="about" class="page-section pb-0">
             <div class="container">
@@ -84,6 +85,8 @@
             </div>
         </div> <!-- .bg-light -->
     </div> <!-- .bg-light -->
+
+    @include('user.contact')
 
     <footer class="page-footer">
         <div class="container">

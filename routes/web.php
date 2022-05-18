@@ -30,6 +30,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+Route::post('/upload_feedbackkkkk', [HomeController::class, 'upload_feedbackkkkk']);
+
 // NEWS FUNCTIONS
 
 Route::get('/add_news', [AdminController::class, 'add_news']);
@@ -48,13 +50,14 @@ Route::post('/EditNewsInDB/{id}', [AdminController::class, 'EditNewsInDB']);
 
 // Route::get('/search', [AdminController::class, 'search']);
 
-Route::get('user_list', [AdminController::class, 'user_list']);
+Route::get('/user_list', [AdminController::class, 'user_list']);
+
+Route::get('/update_user_data', [AdminController::class, 'update_user_data']);  //User edit
 
 Route::get('/delete_user/{id}', [AdminController::class, 'delete_user']);
 
 
-
-
+//Maps routes
 
 //EV POPULAR STATIONS FUNCTIONS
 
