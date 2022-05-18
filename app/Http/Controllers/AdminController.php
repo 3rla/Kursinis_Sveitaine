@@ -10,8 +10,24 @@ use App\Models\news;
 
 use App\Models\User;
 
+use App\Models\feedback;
+
 class AdminController extends Controller
 {
+    //FEEDBACK FUNCTIONS
+
+    public function feedback()
+    {
+        $feedback = feedback::all();
+        return view('admin.feedback' , compact('feedback'));
+    }
+    
+    public function delete_feedback($id)
+    {
+        $feedback = feedback::find($id);
+        $feedback->delete();
+        return redirect()->back();
+    }
 
     // NEWS FUNCTIONS
 

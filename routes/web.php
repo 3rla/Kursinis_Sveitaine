@@ -18,7 +18,8 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/home', [HomeController::class, 'redirect']);
+Route::get('/home', [HomeController::class, 'redirect'])->
+    middleware('auth', 'verified');
 
 Route::middleware([
     'auth:sanctum',
@@ -31,6 +32,7 @@ Route::middleware([
 });
 
 Route::post('/upload_feedbackkkkk', [HomeController::class, 'upload_feedbackkkkk']);
+
 
 // NEWS FUNCTIONS
 
@@ -72,3 +74,9 @@ Route::get('/deletestation/{id}', [AdminController::class, 'deletestation']);
 Route::get('/updatestation/{id}', [AdminController::class, 'updatestation']);
 
 Route::post('/editstation/{id}', [AdminController::class, 'editstation']);
+
+//FEEDBACK FUNCTIONS
+
+Route::get('/feedback', [AdminController::class, 'feedback']);
+
+Route::get('/delete_feedback{id}', [AdminController::class, 'delete_feedback']);
